@@ -140,7 +140,7 @@ String getBTCprice(void){
     
     if((mBTCUpdate == 0) || (millis() - mBTCUpdate > UPDATE_BTC_min * 60 * 1000)){
     
-        if (WiFi.status() != WL_CONNECTED) return (String(bitcoin_price) + "$");
+        if (WiFi.status() != WL_CONNECTED) return ("E" + String(bitcoin_price));
         
         HTTPClient http;
         try {
@@ -165,7 +165,7 @@ String getBTCprice(void){
         }
     }
   
-  return (String(bitcoin_price) + "$");
+  return ("E" + String(bitcoin_price));
 }
 
 unsigned long mTriggerUpdate = 0;
